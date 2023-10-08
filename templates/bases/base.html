@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VitaLab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'geral/css/base.css' %}" rel="stylesheet">
+
+    {% block 'head' %}{% endblock %}
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #066668">
+      <a class="navbar-brand" href="{% url 'login' %}">
+        <img width="50" height="50" src="{% static 'geral/img/logo.png' %}" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white-50" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="{% url 'cadastro' %}">Cadastro</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white-50" href="#" id="exames" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Exames
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="exames">
+              <li><a class="dropdown-item" href="{% url 'solicitar_exames' %}">Solicitar Exames</a></li>
+              <li><a class="dropdown-item" href="{% url 'gerenciar_pedidos' %}">Gerenciar Pedidos</a></li>
+              <li><a class="dropdown-item" href="{% url 'gerenciar_exames' %}">Gerenciar Exames</a></li>
+              <li><a class="dropdown-item" href="{% url 'gerar_acesso_medico' %}">Gerar Acesso ao Medico</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white-50" href="#" id="empresarial" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Empresarial
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="empresarial">
+              <li><a class="dropdown-item" href="{% url 'gerenciar_clientes' %}">Gerenciar Clientes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    {% block 'conteudo' %}{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>

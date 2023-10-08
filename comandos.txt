@@ -1,0 +1,36 @@
+python -m venv venv  -> criar compilador virtual do python
+
+venv\Scripts\Activate  -> ativar ambiente virtual do python
+
+pip install django
+pip install pillow -> para imagens
+
+django-admin startproject pythonando .
+
+
+python manage.py runserver  -> rodar aplicação
+
+python manage.py startapp cursos
+
+python manage.py migrate
+
+python manage.py makemigrations  -> criar novas models no migrations
+python manage.py migrate  -> criar novas tabelas apos criar os models e atualizar as migrations
+
+
+python manage.py createsuperuser  -> criar usuario padrão no django
+
+
+python manage.py startapp usuarios  -> criar app
+python manage.py startapp exames    -> criar app
+
+
+pip install weasyprint  -> gerar tokens / senha automatico, precisa instalar antes o gkt3
+
+python -m pip install weasyprint  
+
+weasyprint --version
+
+
+
+
